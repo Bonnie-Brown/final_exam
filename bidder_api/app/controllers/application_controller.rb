@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
+    include ActionController::Helpers
 
-    skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
 
     def current_user
         @current_user ||= User.find_by_id session[:user_id]
@@ -15,20 +16,20 @@ class ApplicationController < ActionController::API
 
     helper_method :user_signed_in?
 
-    rescue_from StandardError
+    # rescue_from StandardError
 
-    def not_found
-        render(
-            json: {
-                errors: [
-                    {
-                        type: "Not found"
-                    }
-                ]
-            },
-            status: :not_found 
-        )
-    end
+    # def not_found
+    #     render(
+    #         json: {
+    #             errors: [
+    #                 {
+    #                     type: "Not found"
+    #                 }
+    #             ]
+    #         },
+    #         status: :not_found 
+    #     )
+    # end
 
     private
 

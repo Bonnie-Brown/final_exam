@@ -1,6 +1,6 @@
 class Api::V1::AuctionsController < ApplicationController
 
-    rescue_from ActiveRecord::RecordNotFound, with :record_not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def create
         auction = Auction.new(auction_params)
@@ -35,14 +35,15 @@ class Api::V1::AuctionsController < ApplicationController
     protected
 
     def record_not_found(error)
-        status: 404,
+        status 404,
         json{
-            errors: [
+            errors [
                 {
                     type: error.class.to_s,
                     message: error.message
                 }
             ]
         }
+    end
     
 end
