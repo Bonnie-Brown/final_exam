@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from "react";
+import { Session } from "./requests";
+import { User } from "./requests";
+import WelcomePage from './components/WelcomePage';
+import AuctionIndexPage from './components/AuctionIndexPage';
 
 function App() {
+
+  // const [user, setUser] = useState(null);
+  
+  // useEffect(() => {
+  //   getCurrentUser();
+  // }, []);
+
+  // const getCurrentUser = () => {
+  //   return User.current().then((user) => {
+  //     if (user?.id) {
+  //       setUser(user);
+  //     }
+  //   });
+  // };
+
+  // const onSignOut = () => {
+  //   setUser(null);
+  // };
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuctionIndexPage/>
   );
 }
 
