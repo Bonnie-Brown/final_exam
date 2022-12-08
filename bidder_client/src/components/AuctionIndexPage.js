@@ -17,7 +17,7 @@ function AuctionIndexPage() {
                 {auctions.map((a, i) => {
                     return (
                         <li key={i}>
-                            {a.id} - <Link to={`/auctions/${a.id}`}>{a.title}</Link>{" "}
+                            <p>{a.title}</p>
                         </li>
                     );
                 })}
